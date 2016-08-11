@@ -1,0 +1,21 @@
+#SETUP NOTEBOOK ON LOCAL MACHINE WORKING ON REMOTE MACHINE:
+
+sudo pip install jupyter notebook[all]
+
+#on remote machine:
+IPYTHON_OPTS="notebook --no-browser --port=8889" /usr/bin/pyspark
+
+# on local machine
+local_user@local_host$ ssh -i SecurityKey.pem -N -f -L localhost:8888:localhost:8889 remote_user@remote_host
+
+
+
+
+# references
+# [1] ssh tunneling for ipython notebooks
+# [2] setting up pyspark + ipython notebook (posted by Manjeet)
+# [3] If pip isn't working
+
+# [1] https://coderwall.com/p/ohk6cg/remote-access-to-ipython-notebooks-via-ssh
+# [2] https://blogs.aws.amazon.com/bigdata/post/TxX4BY5T1PQ7BQ/Using-IPython-Notebook-to-Analyze-Data-with-Amazon-EMR
+# [3] http://stackoverflow.com/questions/34103119/upgrade-pip-in-amazon-linux
